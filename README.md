@@ -12,7 +12,21 @@ Repositório de atividades práticas e projetos de Sistemas Digitais em VHDL (En
 
 ---
 
-## 🛠️ Simulação (GHDL)
+## 🧪 Tabela de Testes & Simulação (Exemplo: Troca de Sinal)
+
+Faixa válida de representação em 4 bits com sinal: **$-8$ até $+7$**.
+
+| Entrada $B$ (Binário) | $B$ (Decimal) | Saída $S = -B$ (Binário) | $S$ (Decimal) | Overflow | Status / Observação |
+| :---: | :---: | :---: | :---: | :---: | :--- |
+| `0011` | $+3$ | `1101` | $-3$ | `0` | ✅ Válido |
+| `0111` | $+7$ | `1001` | $-7$ | `0` | ✅ Válido (limite positivo) |
+| `0000` | $0$ | `0000` | $0$ | `0` | ✅ Válido |
+| `1101` | $-3$ | `0011` | $+3$ | `0` | ✅ Válido |
+| `1000` | $-8$ | `1000` | $-8$ | `1` | ⚠️ **Inválido / Overflow** ($+8$ não cabe em 4 bits) |
+
+---
+
+## 🛠️ Como Simular (GHDL)
 
 ```bash
 cd 01-troca-sinal-4bits
